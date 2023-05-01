@@ -21,8 +21,4 @@
 
   - **This Site's authentication data are protected using enviroment variable system**
 
-<<<<<<< HEAD
   - This page will help users to learn about some amazing recipes of the world class mexican chefs and a user friendly navigation system for exploring different section of the page.
-=======
-  - This page will help users to learn about some amazing recipes of the world class mexican chefs and a user friendly navigation system for exploring different section of the page.
->>>>>>> 1880b8894e8daf9ac0a35ccab7100b090ed0ebb1
