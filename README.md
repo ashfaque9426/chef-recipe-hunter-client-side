@@ -1,5 +1,5 @@
 
-# JobsHub
+# The Food Artisan
 
 **This Project is created for Programming Hero batch7 assignment-10**
 
