@@ -3,9 +3,9 @@ import React from 'react';
 
 const Registration = () => {
     return (
-        <div>
-            
-        </div>
+        <>
+            <h2>Please Register</h2>
+        </>
     );
 };
 
