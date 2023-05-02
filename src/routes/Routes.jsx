@@ -8,6 +8,7 @@ import ChefSection from "../components/ChefSectionComponents/ChefSection/ChefSec
 import Blog from "../pages/Blog/Blog";
 import Login from "../pages/Login/Login";
 import Registration from "../pages/Registration/Registration";
+import RecipeSection from "../components/RecipeSectionComponents/RecipeSection/RecipeSection";
 
 const router = createBrowserRouter([
     {
@@ -17,7 +18,12 @@ const router = createBrowserRouter([
         children: [
             {
                 path: '/',
-                element: <ChefSection />
+                element: <ChefSection />,
+                loader: () => fetch('http://localhost:5000/chefData')
+            },
+            {
+                path: 'recipes',
+                element: <RecipeSection />
             },
             {
                 path: 'login',
