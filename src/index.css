@@ -1,0 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Lato:wght@400;700;900&family=Raleway:wght@400;600;700;800&display=swap');
+
+:root {
+    max-width: 1920px;
+    margin: auto;
+    background-color: #171819;
+    --primary-background: #202020;
+    --secondary-background: #e4c290;
+    color: #ffffff;
+}
+
+* {
+    font-family: 'Raleway', sans-serif;
+}
