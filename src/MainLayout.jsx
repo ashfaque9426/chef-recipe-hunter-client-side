@@ -9,7 +9,7 @@ const MainLayout = () => {
     return (
         <>
             <Header />
-            <main style={{width: '75%', height: "calc(100vh - 150px)", margin: "auto"}} role='main'>
+            <main className='mainSection' style={{width: '75%', height: "calc(100vh - 150px)", margin: "auto"}} role='main'>
                 <Outlet />
             </main>
             <Footer />

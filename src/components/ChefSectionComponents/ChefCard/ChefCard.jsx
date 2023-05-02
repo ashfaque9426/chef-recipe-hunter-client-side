@@ -3,6 +3,7 @@
 import React from 'react';
 import { BiLike } from "react-icons/bi";
 import { Link } from 'react-router-dom';
+import './ChefCard.css'
 
 // eslint-disable-next-line react/prop-types
 const ChefCard = ({data}) => {
@@ -10,19 +11,21 @@ const ChefCard = ({data}) => {
     const {id, imageUrl, name, yearsOfExperience, numberOfRecipes, likes} = data;
     return (
         <div className='col'>
-            <article style={{ border: '1px solid var(--secondary-background)'}} className='h-100 rounded-3'>
-                <figure className='h-50'>
+            <article style={{ border: '1px solid var(--secondary-background)'}} className='h-100 rounded-3 single-card position-relative'>
+                <figure className='h-50 m-0'>
                     <img className='w-100 h-100 object-fit-cover rounded-3' src={imageUrl} alt={name + " image"} />
                 </figure>
-                <section className='px-3 h-50'>
-                    <h3 className='fs-5 mb-4 fw-semibold text-center'>
+                <section className='h-50 px-3'>
+                    <h3 className='fs-5 my-4 fw-semibold text-center'>
                         Chef Name: <span className='fw-bold'>{name}</span>
                     </h3>
-                    <p className='fs-5 fw-semibold m-0 my-1'>Years of experience: <span className='fw-semibold'>{yearsOfExperience}</span> years</p>
-                    <p className='fs-5 fw-semibold m-0 my-1'>Number of recipes: <span className='fw-semibold'>{numberOfRecipes}</span> recipes</p>
-                    <div className='d-flex justify-content-between align-items-center mt-3'>
-                        <span className='fs-6 fw-semibold m-0 my-2'>Likes: <span className='fw-semibold'>{likes} <BiLike /> </span> </span>
-                        <Link to='/recipes'><button style={{ backgroundColor: "var(--secondary-background)" }} className='btn text-dark fw-bold mt-3'>View Recipes</button></Link>
+                    <p style={{fontSize: "16px"}} className='fw-semibold m-0 my-1'>Years of experience: <span className='fw-semibold'>{yearsOfExperience}</span> years</p>
+                    <p style={{fontSize: "16px"}} className='fw-semibold m-0 my-1'>Number of recipes: <span className='fw-semibold'>{numberOfRecipes}</span> recipes</p>
+                    <div style={{width: "90%"}} className='position-absolute bottom-0'>
+                        <div className='d-flex justify-content-between align-items-center pb-3'>
+                            <span className='fs-6 fw-semibold m-0 my-2'>Likes: <span className='fw-semibold'>{likes} <BiLike /> </span> </span>
+                            <Link to='/recipes'><button style={{ backgroundColor: "var(--secondary-background)" }} className='btn text-dark fw-bold'>View Recipes</button></Link>
+                        </div>
                     </div>
                 </section>
             </article>

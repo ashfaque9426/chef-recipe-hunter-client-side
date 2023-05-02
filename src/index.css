@@ -17,3 +17,10 @@ body {
     background-color: #171819 !important;
     color: #ffffff !important;
 }
+
+@media screen and (max-width: 530px) {
+    .mainSection {
+        width: 100% !important;
+        padding-inline: 20px;
+    }
+}
