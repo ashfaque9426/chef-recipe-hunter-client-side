@@ -11,7 +11,7 @@ const MainLayout = () => {
     return (
         <>
             <Header />
-            <main className='mainSection' style={{width: '75%', margin: "auto"}} role='main'>
+            <main className='mainSection d-flex flex-column justify-content-center align-items-center' style={{width: '75%', margin: "auto"}} role='main'>
                 <Outlet />
                 {
                     location.pathname === '/'? <FoodAndWine /> : ''

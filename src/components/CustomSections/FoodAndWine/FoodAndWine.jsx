@@ -13,7 +13,7 @@ const FoodAndWine = () => {
                 </figure>
                 <article className='w-50 px-3'>
                     <h2>Food and wine of Maxico</h2>
-                    <p className='mt-3'>Deive into the excellent produce and vibrant restaurants of Maxico and get to know its top chefs as we discover what the country's food and drink so special.</p>
+                    <p className='mt-3'>Deive into the excellent produce and vibrant restaurants of Maxico and get to know its top chefs as we discover what the country&apos;s food and drink so special.</p>
                     <button style={{ borderColor: 'var(--secondary-background)'}} className='btn text-light discover-btn'>Discover More</button>
                 </article>
             </div>
