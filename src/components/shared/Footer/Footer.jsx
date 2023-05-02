@@ -3,7 +3,7 @@ import React from 'react';
 
 const Footer = () => {
     return (
-        <footer>
+        <footer className='text-center py-5 mt-5'>
             footer section
         </footer>
     );

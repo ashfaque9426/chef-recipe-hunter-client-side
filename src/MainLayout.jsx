@@ -1,16 +1,21 @@
 /* eslint-disable no-unused-vars */
 import React from 'react';
 import Header from './components/shared/Header/Header';
-import { Outlet } from 'react-router-dom';
+import { Outlet, useLocation } from 'react-router-dom';
 import Footer from './components/shared/Footer/Footer';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import FoodAndWine from './components/CustomSections/FoodAndWine/FoodAndWine';
 
 const MainLayout = () => {
+    const location = useLocation();
     return (
         <>
             <Header />
-            <main className='mainSection' style={{width: '75%', height: "calc(100vh - 150px)", margin: "auto"}} role='main'>
+            <main className='mainSection' style={{width: '75%', margin: "auto"}} role='main'>
                 <Outlet />
+                {
+                    location.pathname === '/'? <FoodAndWine /> : ''
+                }
             </main>
             <Footer />
         </>

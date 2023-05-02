@@ -9,6 +9,7 @@ import Blog from "../pages/Blog/Blog";
 import Login from "../pages/Login/Login";
 import Registration from "../pages/Registration/Registration";
 import RecipeSection from "../components/RecipeSectionComponents/RecipeSection/RecipeSection";
+import FoodAndWine from "../components/CustomSections/FoodAndWine/FoodAndWine";
 
 const router = createBrowserRouter([
     {

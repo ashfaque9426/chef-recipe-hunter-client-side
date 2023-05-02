@@ -8,7 +8,7 @@ const ChefSection = () => {
     console.log(chefData);
     return (
         <section>
-            <h2 className='my-5 text-center'>Avialable Chefs: {chefData.length}</h2>
+            <h2 className='my-5 text-center fw-bold'>Avialable Chefs: {chefData.length}</h2>
             <section className='row row-cols-1 row-cols-md-2 row-cols-xxl-3 g-4'>
                 {
                     chefData.map(data => <ChefCard key={data.id} data={data} />)
