@@ -7,12 +7,15 @@ import {
 import "./index.css";
 import MainLayout from './MainLayout.jsx';
 import router from './routes/Routes.jsx';
+import AuthProvider from './providers/AuthProvider';
 
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <RouterProvider router={router}>
-      <MainLayout />
-    </RouterProvider>
+    <AuthProvider>
+      <RouterProvider router={router}>
+        <MainLayout />
+      </RouterProvider>
+    </AuthProvider>
   </React.StrictMode>,
 )
