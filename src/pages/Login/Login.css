@@ -1,0 +1,5 @@
+@media only screen and (max-width: 443px) {
+    .myFormLog {
+        min-width: 360px !important;
+    }
+}

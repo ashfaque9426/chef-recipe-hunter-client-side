@@ -1,0 +1,5 @@
+@media only screen and (max-width: 443px) {
+    .myFormReg {
+        min-width: 360px !important;
+    }
+}

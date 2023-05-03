@@ -4,6 +4,7 @@ import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../providers/AuthProvider';
+import './Login.css'
 
 const Login = () => {
     const [email, setEmail] = useState('');
@@ -109,25 +110,25 @@ const Login = () => {
 
     return (
         <>
-            <div style={{ height: 'calc(100vh - 20vh)' }} className='d-flex flex-column justify-content-center align-items-center'>
-                <h2 className='fw-semibold mb-5'>Please Login</h2>
-                <Form onSubmit={handleSignin} style={{ border: '1px solid var(--secondary-background)'}} className='px-4 py-5 rounded-3'>
+            <div className='d-flex flex-column justify-content-center align-items-center'>
+                <h2 style={{marginTop: "100px"}} className='fw-semibold mb-5'>Please Login</h2>
+                <Form onSubmit={handleSignin} style={{ border: '1px solid var(--secondary-background)', minWidth: "400px" }} className='px-4 py-5 rounded-3 myFormLog'>
                     <Form.Group className="mb-3" controlId="formBasicEmail">
-                        <Form.Label>Email address</Form.Label>
+                        <Form.Label>Email address<span className='fs-3'>*</span></Form.Label>
                         <Form.Control className='mb-2' type="email" value={email} onChange={handleEmail} name='email' placeholder="Enter email" />
                         <Form.Text className="text-muted">
                             {
-                                emailError !== "" ? <p className='text-danger'>{emailError}</p> : "We'll never share your email with anyone else."
+                                emailError !== "" ? <p style={{minHeight: "24px"}} className='text-danger'>{emailError}</p> : "We'll never share your email with anyone else."
                             }
                         </Form.Text>
                     </Form.Group>
 
                     <Form.Group className="mb-3" controlId="formBasicPassword">
-                        <Form.Label>Password</Form.Label>
+                        <Form.Label>Password<span className='fs-3'>*</span></Form.Label>
                         <Form.Control className='mb-2' type="password" value={password} onChange={handlePassowrd} name='password' placeholder="Password" />
                         <Form.Text className="text-muted">
                             {
-                                passwordError !== "" ? <p className='text-danger'>{passwordError}</p> : "We'll never share your password with anyone else."
+                                passwordError !== "" ? <p  style={{minHeight: "24px"}} className='text-danger'>{passwordError}</p> : "Your password is safe."
                             }
                         </Form.Text>
                     </Form.Group>
