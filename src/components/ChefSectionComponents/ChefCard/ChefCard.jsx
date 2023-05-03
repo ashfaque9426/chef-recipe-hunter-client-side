@@ -8,7 +8,7 @@ import './ChefCard.css'
 // eslint-disable-next-line react/prop-types
 const ChefCard = ({data}) => {
     // eslint-disable-next-line react/prop-types
-    const {id, imageUrl, name, yearsOfExperience, numberOfRecipes, likes} = data;
+    const { imageUrl, name, yearsOfExperience, numberOfRecipes, likes} = data;
     return (
         <div className='col'>
             <article style={{ border: '1px solid var(--secondary-background)'}} className='h-100 rounded-3 single-card position-relative'>
