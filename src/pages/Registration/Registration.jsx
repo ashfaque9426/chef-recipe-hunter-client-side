@@ -2,19 +2,21 @@
 import React, { useContext, useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
-import { Link } from 'react-router-dom';
+import { Link, Navigate } from 'react-router-dom';
 import { AuthContext } from '../../providers/AuthProvider';
 import './Registration.css'
 
 const Registration = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const [success, setSuccess] = useState('');
     const [error, setError] = useState('');
     const [emailError, setEmailError] = useState("");
     const [passwordError, setPasswordError] = useState("");
     const [disableBtn, setDisableBtn] = useState(true);
+    const [redirection, setRedirection] = useState(false);
 
-    const {createUser} = useContext(AuthContext);
+    const { createUser, updataUserProfile, logOut } = useContext(AuthContext);
 
     const handleRegistration = e => {
         e.preventDefault();
@@ -23,15 +25,26 @@ const Registration = () => {
         const name = form.name.value;
         const photoUrl = form.photo.value;
 
-        if (!/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(email)) {
-            setEmailError("email address doesnot match the required pattern of one or more alphanumeric characters and @ symbol")
-        }
-        
-
         createUser(email, password)
         .then(result => {
             const loggedUser = result.user;
-            console.log(loggedUser);
+            
+            if(name && photoUrl || name || photoUrl) {
+                updataUserProfile(loggedUser, name, photoUrl)
+                .then(()=> {
+                    console.log(loggedUser);
+                })
+                .catch(error => console.log(error.message))
+            }
+
+            form.reset();
+            setEmail("");
+            setPassword("");
+            setSuccess("Registration Successfull");
+            logOut();
+            setTimeout(() => {
+                setRedirection(true)
+            }, 2000)
         })
         .catch(error => {
             setError(error.message);
@@ -129,9 +142,12 @@ const Registration = () => {
                     </Button>
 
                     {
-                        error !== "" ? <p className='text-danger'>{error}</p> : ""
+                        error !== "" ? <p className='text-danger'>{error}</p> : <p className='text-success fw-bold'>{success}</p>
                     }
                 </Form>
+                {
+                    redirection && <Navigate to='/login' replace={true} />
+                }
             </div>
             
         </>

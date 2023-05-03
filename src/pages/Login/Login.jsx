@@ -4,12 +4,15 @@ import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../providers/AuthProvider';
+import { FcGoogle } from "react-icons/fc";
+import { FaGithub } from "react-icons/fa";
 import './Login.css'
 
 const Login = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [error, setError] = useState('');
+    const [success, setSuccess] = useState('');
     const [emailError, setEmailError] = useState("");
     const [passwordError, setPasswordError] = useState("");
     const [disableBtn, setDisableBtn] = useState(true);
@@ -19,16 +22,17 @@ const Login = () => {
     const handleSignin = e => {
         e.preventDefault();
         const form = e.target;
-
         setError("");
-        setEmailError("");
-        setPasswordError("");
 
         signIn(email, password)
         .then(result => {
             const loggedUser = result.user;
             console.log(loggedUser);
             form.reset();
+            setEmail("");
+            setPassword("");
+            setSuccess("login successfull");
+            setDisableBtn(true);
         })
         .catch(error => {
             setError(error.message);
@@ -140,14 +144,16 @@ const Login = () => {
                         Login
                     </Button>
 
-                    {
-                        error !== "" ? <p className='text-danger'>{error}</p> : ""
-                    }
+                    <div>
+                        {
+                            error !== "" ? <p className='text-danger'>{error}</p> : <p className='text-success fw-bold'>{success}</p>
+                        }
+                    </div>
                 </Form>
 
                 <section className='d-flex flex-column flex-md-row mt-5'>
-                    <button onClick={handleSingInWithGoogle} className='btn btn-primary fw-semibold mx-2 my-2'>Google Login</button>
-                    <button onClick={handleSignInWithGithub} className='btn btn-secondary fw-semibold mx-2 my-2'>Github Login</button>
+                    <button onClick={handleSingInWithGoogle} className='btn btn-primary fw-semibold mx-2 my-2'><FcGoogle /> Google Login</button>
+                    <button onClick={handleSignInWithGithub} className='btn btn-secondary fw-semibold mx-2 my-2'><FaGithub /> Github Login</button>
                 </section>
             </div>
         </>

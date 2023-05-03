@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
 import React, { createContext, useEffect, useState } from 'react';
 import app from '../.firebase/firebase.config';
-import { GithubAuthProvider, GoogleAuthProvider, createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut } from "firebase/auth";
+import { GithubAuthProvider, GoogleAuthProvider, createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile } from "firebase/auth";
 
 export const AuthContext = createContext(null);
 const auth = getAuth(app);
@@ -12,10 +12,20 @@ const gitHubProvider = new GithubAuthProvider();
 const AuthProvider = ({children}) => {
     const [loading, setLoading] = useState(true);
     const [user, setUser] = useState(null);
+    const [name, setName] = useState("");
+    const [photoUrl, setPhotoUrl] = useState("");
 
     const createUser = (email, password) => {
         setLoading(true);
         return createUserWithEmailAndPassword(auth, email, password);
+    }
+
+    const updataUserProfile = (user, name, url) => {
+        setLoading(true);
+        return updateProfile(user, {
+            displayName: name,
+            photoURL: url
+        });
     }
 
     const signIn = (email, password) => {
@@ -42,6 +52,14 @@ const AuthProvider = ({children}) => {
         const unsubscribe = onAuthStateChanged(auth, loggedUser => {
             setUser(loggedUser);
             setLoading(false);
+
+            if(loggedUser !== null) {
+                setName(loggedUser.displayName);
+            }
+
+            if(loggedUser !== null) {
+                setPhotoUrl(loggedUser.photoURL);
+            }
         });
 
         return ()=> unsubscribe();
@@ -50,7 +68,10 @@ const AuthProvider = ({children}) => {
     const authInfo = {
         user,
         loading,
+        name,
+        photoUrl,
         createUser,
+        updataUserProfile,
         setUser,
         signIn,
         signInWithGoogle,
