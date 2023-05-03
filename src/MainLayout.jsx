@@ -7,6 +7,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import FoodAndWine from './components/CustomSections/FoodAndWine/FoodAndWine';
 import { AuthContext } from './providers/AuthProvider';
 import { Spinner } from 'react-bootstrap';
+import { ToastContainer } from 'react-toastify';
 
 const MainLayout = () => {
     const location = useLocation();
@@ -25,6 +26,7 @@ const MainLayout = () => {
                     location.pathname === '/'? <FoodAndWine /> : ''
                 }
             </main>
+            <ToastContainer />
             <Footer />
         </>
     );

@@ -9,12 +9,12 @@ const ChefRecipesBanner = ({dataObj}) => {
     const { id, name, imageUrl, yearsOfExperience, numberOfRecipes, bio, likes } = dataObj;
     return (
         <section style={{ backgroundImage: `url(${chefsRecipesBanner})`, backgroundSize: 'cover', backgroundPosition: "center", backgroundAttachment: "fixed", height: "calc(100vh - 30vh),", width: "100vw"}} className='mb-5 chefBannerContainer px-5' role='banner'>
-            <div style={{ height: "calc(100vh - 30vh)" }} className='d-flex flex-column-reverse flex-md-row gap-5 justify-content-center align-items-center chefBannerDetails'>
-                <figure>
-                    <img className='img-fluid' src={imageUrl} alt="Chef Image" />
+            <div style={{ height: "calc(100vh - 30vh)",  }} className='d-flex flex-column-reverse flex-md-row gap-5 justify-content-center align-items-center chefBannerDetails'>
+                <figure style={{ borderRadius: "50%", aspectRatio: "1", border: '3px solid var(--secondary-background)' }} className='overflow-hidden w-50 m-0 chefFig'>
+                    <img className='chefImg' src={imageUrl} alt="Chef Image" />
                 </figure>
                 <section>
-                    <h2 className='mb-3'>Chef Name: {name} </h2>
+                    <h2 className='mb-3 chefH2'>Chef Name: {name} </h2>
                     <p><span style={{ color: "#e4c290"}} className='fw-semibold'>Bio:</span> {bio}</p>
                     <p><span style={{ color: "#e4c290"}} className="fw-semibold">Recipes:</span> {numberOfRecipes} recipes</p>
                     <p><span style={{ color: "#e4c290"}} className="fw-semibold">Years of Experience:</span> {yearsOfExperience} years</p>

@@ -15,15 +15,38 @@
 }
 
 .chefBannerDetails {
+    margin: 30px 90px;
     position: relative;
     z-index: 3;
 }
 
+.chefImg {
+    width: 100%;
+    height: 150%;
+    object-fit: cover;
+}
+
 @media only screen and (max-width: 767px) {
+    .chefFig {
+        width: 100% !important;
+    }
+    .chefH2 {
+        margin-top: 55px;
+    }
     .chefBannerContainer {
-        height: 767px !important;
+        height: 819px !important;
     }
     .chefBannerDetails {
+        margin: auto;
         height: 767px !important;
+    }
+}
+
+@media only screen and (min-width: 2000px) {
+    .chefBannerDetails {
+        margin-inline: 350px !important;
+    }
+    .chefFig {
+        width: 500px !important;
     }
 }
