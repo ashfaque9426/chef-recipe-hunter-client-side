@@ -16,6 +16,7 @@ const RecipeCard = ({data}) => {
                     <h6 style={{ color: "#e4c290" }} className='fw-semibold'>Ingredients</h6>
                     <ol>
                         {
+                            // eslint-disable-next-line react/prop-types
                             ingredients.map((item, index) => <li key={index}>{item}</li>)
                         }
                     </ol>
