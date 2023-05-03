@@ -10,6 +10,7 @@ import Login from "../pages/Login/Login";
 import Registration from "../pages/Registration/Registration";
 import RecipeSection from "../components/RecipeSectionComponents/RecipeSection/RecipeSection";
 import FoodAndWine from "../components/CustomSections/FoodAndWine/FoodAndWine";
+import PrivateRouter from "./PrivateRouter";
 
 const router = createBrowserRouter([
     {
@@ -24,7 +25,7 @@ const router = createBrowserRouter([
             },
             {
                 path: 'recipes',
-                element: <RecipeSection />
+                element: <PrivateRouter><RecipeSection /></PrivateRouter>
             },
             {
                 path: 'login',

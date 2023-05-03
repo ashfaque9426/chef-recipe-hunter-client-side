@@ -2,7 +2,7 @@
 import React, { useContext, useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../providers/AuthProvider';
 import { FcGoogle } from "react-icons/fc";
 import { FaGithub } from "react-icons/fa";
@@ -19,6 +19,10 @@ const Login = () => {
 
     const { signIn, signInWithGoogle, signInWithGitHub } = useContext(AuthContext);
 
+    const location = useLocation();
+    const navigate = useNavigate();
+    const from = location.state?.from?.pathname || '/';
+
     const handleSignin = e => {
         e.preventDefault();
         const form = e.target;
@@ -33,9 +37,12 @@ const Login = () => {
             setPassword("");
             setSuccess("login successfull");
             setDisableBtn(true);
+            navigate(from, {replace: true});
         })
         .catch(error => {
-            setError(error.message);
+            if(error) {
+                setError("Your email or password doesnot match");
+            }
         })
     }
 
@@ -93,6 +100,7 @@ const Login = () => {
         .then(result => {
             const loggedUser = result.user;
             console.log(loggedUser);
+            navigate(from, { replace: true });
         })
         .catch(error => {
             setError(error.message);
@@ -106,6 +114,7 @@ const Login = () => {
         .then(result => {
             const loggedUser = result.user;
             console.log(loggedUser);
+            navigate(from, { replace: true });
         })
         .catch(error => {
             setError(error.message);

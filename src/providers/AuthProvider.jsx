@@ -51,7 +51,6 @@ const AuthProvider = ({children}) => {
     useEffect(()=> {
         const unsubscribe = onAuthStateChanged(auth, loggedUser => {
             setUser(loggedUser);
-            setLoading(false);
 
             if(loggedUser !== null) {
                 setName(loggedUser.displayName);
@@ -60,6 +59,8 @@ const AuthProvider = ({children}) => {
             if(loggedUser !== null) {
                 setPhotoUrl(loggedUser.photoURL);
             }
+            
+            setLoading(false);
         });
 
         return ()=> unsubscribe();
