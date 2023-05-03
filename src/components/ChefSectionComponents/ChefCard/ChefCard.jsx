@@ -8,7 +8,7 @@ import './ChefCard.css'
 // eslint-disable-next-line react/prop-types
 const ChefCard = ({data}) => {
     // eslint-disable-next-line react/prop-types
-    const { imageUrl, name, yearsOfExperience, numberOfRecipes, likes} = data;
+    const {id, imageUrl, name, yearsOfExperience, numberOfRecipes, likes} = data;
     return (
         <div className='col'>
             <article style={{ border: '1px solid var(--secondary-background)'}} className='h-100 rounded-3 single-card position-relative'>
@@ -24,7 +24,7 @@ const ChefCard = ({data}) => {
                     <div style={{width: "90%"}} className='position-absolute bottom-0'>
                         <div className='d-flex justify-content-between align-items-center pb-3'>
                             <span className='fs-6 fw-semibold m-0 my-2'>Likes: <span className='fw-semibold'>{likes} <BiLike /> </span> </span>
-                            <Link to='/recipes'><button style={{ backgroundColor: "var(--secondary-background)" }} className='btn text-dark fw-bold'>View Recipes</button></Link>
+                            <Link to={`/recipes/${id}`}><button style={{ backgroundColor: "var(--secondary-background)" }} className='btn text-dark fw-bold'>View Recipes</button></Link>
                         </div>
                     </div>
                 </section>
