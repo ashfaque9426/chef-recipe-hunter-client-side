@@ -1,11 +1,20 @@
 // eslint-disable-next-line no-unused-vars
 import React from 'react';
+import { PDFDownloadLink } from '@react-pdf/renderer';
+import PDF from '../../components/PDF';
+
+
 
 const Blog = () => {
 
     return (
         <section>
-            <h2 style={{marginTop: "150px"}}>This is blog Q&A Section</h2>
+            <PDF />
+            <PDFDownloadLink document={<PDF />} fileName="MyPageInfo.pdf">
+                {({loading}) => (loading ? 'Loading document...' : 'Download now!')}
+            </PDFDownloadLink>
+
+            <h2 style={{marginTop: "90px"}}>This is blog Q&A Section</h2>
             <ol>
                 <section className='mt-5 mb-5 fs-3'>
                     <li>Tell us the differences between uncontrolled and controlled components?</li>
