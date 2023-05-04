@@ -8,6 +8,7 @@ import FoodAndWine from './components/CustomSections/FoodAndWine/FoodAndWine';
 import { AuthContext } from './providers/AuthProvider';
 import { Spinner } from 'react-bootstrap';
 import { ToastContainer } from 'react-toastify';
+import MasterChefChampion from './components/MasterChefChampion/MasterChefChampion';
 
 const MainLayout = () => {
     const location = useLocation();
@@ -20,6 +21,9 @@ const MainLayout = () => {
     return (
         <>
             <Header />
+            {
+                location.pathname === '/' ? <MasterChefChampion /> : ''
+            }
             <main className='mainSection d-flex flex-column justify-content-center align-items-center' style={{width: '75%', margin: "auto"}} role='main'>
                 <Outlet />
                 {

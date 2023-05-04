@@ -18,10 +18,10 @@ const ChefRecipesBanner = ({dataObj}) => {
                 </figure>
                 <section>
                     <h2 className='mb-3 chefH2'>Chef Name: {name} </h2>
-                    <p><span style={{ color: "#e4c290"}} className='fw-semibold'>Bio:</span> {bio}</p>
-                    <p><span style={{ color: "#e4c290"}} className="fw-semibold">Recipes:</span> {numberOfRecipes} recipes</p>
-                    <p><span style={{ color: "#e4c290"}} className="fw-semibold">Years of Experience:</span> {yearsOfExperience} years</p>
-                    <p><span style={{ color: "#e4c290"}} className="fw-semibold">Likes:</span> {likes}</p>
+                    <p><span style={{ color: "#e4c290"}} className='fs-5 fw-semibold'>Bio:</span> {bio}</p>
+                    <p><span style={{ color: "#e4c290"}} className="fs-5 fw-semibold">Recipes:</span> {numberOfRecipes} recipes</p>
+                    <p><span style={{ color: "#e4c290"}} className="fs-5 fw-semibold">Years of Experience:</span> {yearsOfExperience} years</p>
+                    <p><span style={{ color: "#e4c290"}} className="fs-5 fw-semibold">Likes:</span> {likes}</p>
                 </section>
             </div>
         </section>

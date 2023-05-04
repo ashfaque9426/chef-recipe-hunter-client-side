@@ -1,0 +1,45 @@
+.masterArt h3 {
+    transition: transform .2s;
+}
+
+.masterArt h3:hover {
+    cursor: pointer;
+    transform: translateX(33px) scale(1.1);
+    color: #f79e05;
+}
+
+.masterFig {
+    position: relative;
+}
+
+.masterFig img {
+    transition: transform .2s;
+}
+
+.masterFig h4 {
+    display: none;
+}
+
+.masterFig:hover h4 {
+    position: absolute;
+    display: block;
+    top: 45%;
+    left: 40%;
+    font-weight: 600;
+}
+
+.masterFig h4:hover {
+    cursor: pointer;
+    color: #ffa200;
+}
+
+.masterFig:hover img {
+    opacity: 0.3;
+    cursor: pointer;
+    transform: scale(1.5);
+}
+
+.masterFig:hover .masterFig::before {
+    text-align: center;
+    content: "hello";
+}
