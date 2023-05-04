@@ -13,28 +13,28 @@ const MasterChefChampion = () => {
             <div className='row row-cols-1 row-cols-lg-2 row-cols-xxl-3 text-center g-4'>
                 <div className='col'>
                     <article className='h-100 masterArt'>
-                        <h3 className='fw-semibold text-start'>Apply for MasterChef Maxico &gt;</h3>
+                        <h3 title='Apply for MasterChef Maxico' className='fw-semibold text-start fs-4'>Apply for MasterChef Maxico &gt;</h3>
                         <figure style={{border: "6px solid #fff", borderRadius: "8px"}} className='m-0 overflow-hidden masterFig'>
                             <img className='img-fluid' src={masterChefSectionImg1} alt="chefs image" />
-                            <h4>Apply Now</h4>
+                            <h4 title='Apply Now'>Apply Now</h4>
                         </figure>
                     </article>
                 </div>
                 <div className='col'>
                     <article className='h-100 masterArt'>
-                        <h3 className='fw-semibold text-start'>Apply for MasterChef: The Professionals &gt;</h3>
+                        <h3 title='Apply for MasterChef: The Professionals' className='fw-semibold text-start fs-4'>Apply for MasterChef: The Professionals &gt;</h3>
                         <figure style={{ border: "6px solid #fff", borderRadius: "8px" }} className='m-0 overflow-hidden masterFig'>
                             <img className='img-fluid' src={masterChefSectionImg2} alt="chefs image" />
-                            <h4>Apply Now</h4>
+                            <h4 title='Apply Now'>Apply Now</h4>
                         </figure>
                     </article>
                 </div>
                 <div className='col'>
                     <article className='h-100 masterArt'>
-                        <h3 className='fw-semibold text-start'>Apply for Young MasterChef &gt;</h3>
+                        <h3 title='Apply for Young MasterChef' className='fw-semibold text-start fs-4'>Apply for Young MasterChef &gt;</h3>
                         <figure style={{ border: "6px solid #fff", borderRadius: "8px" }} className='m-0 overflow-hidden masterFig'>
                             <img className='img-fluid' src={masterChefSectionImg3} alt="chefs image" />
-                            <h4>Apply Now</h4>
+                            <h4 title='Apply Now'>Apply Now</h4>
                         </figure>
                     </article>
                 </div>

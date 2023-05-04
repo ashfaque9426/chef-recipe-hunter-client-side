@@ -5,7 +5,7 @@ import { FiFacebook, FiTwitter, FiInstagram, FiYoutube } from "react-icons/fi";
 
 const Footer = () => {
     return (
-        <footer style={{marginTop: "150px"}} className=''>
+        <footer style={{marginTop: "150px"}} className='Myfooter'>
             <section className='d-flex flex-column flex-lg-row justify-content-around align-items-center align-items-lg-start myFooterDiv1'>
                 <section className='mb-3'>
                     <p className='text-warning'>Privacy Policy</p>
@@ -19,7 +19,7 @@ const Footer = () => {
                 </section>
                 <section>
                     <h6>Follow The Food Artisan on</h6>
-                    <div className='d-flex justify-content-around align-items-center fs-3 mt-3'>
+                    <div className='d-flex justify-content-around align-items-center fs-3 mt-3 iconDiv'>
                         <FiFacebook />
                         <FiTwitter />
                         <FiInstagram />
