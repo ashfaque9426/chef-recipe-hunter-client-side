@@ -10,7 +10,7 @@ import userIcon from '../../../assets/icons/userIcon.png'
 
 const Header = () => {
     const location = useLocation();
-    const {user, logOut} = useContext(AuthContext);
+    const { user, logOut } = useContext(AuthContext);
     console.log(user);
     return (
         <header style={location.pathname === '/' ? { backgroundImage: `url(${chefImg})`, backgroundSize: 'cover', backgroundPosition: "center" } : { backgroundColor: "var(--primary-background)"}}>

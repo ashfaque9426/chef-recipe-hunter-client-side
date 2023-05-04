@@ -37,14 +37,13 @@ const Registration = () => {
                 .catch(error => console.log(error.message))
             }
 
-            form.reset();
             setEmail("");
             setPassword("");
             setSuccess("Registration Successfull");
             logOut();
             setTimeout(() => {
                 setRedirection(true)
-            }, 2000)
+            }, 1000)
         })
         .catch(error => {
             setError(error.message);
