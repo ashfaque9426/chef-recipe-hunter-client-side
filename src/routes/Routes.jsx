@@ -21,12 +21,12 @@ const router = createBrowserRouter([
             {
                 path: '/',
                 element: <ChefSection />,
-                loader: () => fetch('http://localhost:5000/chefData')
+                loader: () => fetch('https://b7a10-chef-recipe-hunter-server-side-ashfaque9426-public.vercel.app/chefData')
             },
             {
                 path: 'recipes/:id',
                 element: <PrivateRouter><RecipeSection /></PrivateRouter>,
-                loader: ({params}) => fetch(`http://localhost:5000/recipes/${params.id}`)
+                loader: ({ params }) => fetch(`https://b7a10-chef-recipe-hunter-server-side-ashfaque9426-public.vercel.app/recipes/${params.id}`)
             },
             {
                 path: 'login',
