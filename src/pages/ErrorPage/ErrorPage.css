@@ -1,0 +1,9 @@
+@media only screen and (max-width: 767px) {
+    .errStatus {
+        margin-bottom: 15px;
+    }
+    .errMsg {
+        border-left: 0 !important;
+        border-top: 7px solid var(--secondary-background);
+    }
+}
